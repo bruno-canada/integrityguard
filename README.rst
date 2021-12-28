@@ -5,10 +5,6 @@ IntegrityGuard
 .. image:: https://img.shields.io/pypi/v/integrityguard.svg
         :target: https://pypi.python.org/pypi/integrityguard
 
-.. image:: https://pyup.io/repos/github/bruno-canada/integrityguard/shield.svg
-     :target: https://pyup.io/repos/github/bruno-canada/integrityguard/
-     :alt: Updates
-
 .. image:: https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg
      :target: code_of_conduct.md
      :alt: Contributor Covenant
