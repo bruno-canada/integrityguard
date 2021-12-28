@@ -18,4 +18,6 @@ The main motivation for this project is to offer all the minimum features requir
 
 # Call for contributors
 
+This project is just at the begining of its development. We're currently looking for engaged and energized people to colaborate and make it awesome.
+
 
