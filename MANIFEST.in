@@ -1,7 +1,7 @@
-include AUTHORS
-include HISTORY
+include AUTHORS.md
+include HISTORY.md
 include LICENSE
-include README
+include README.md
 
 recursive-include tests *
 recursive-exclude * __pycache__
