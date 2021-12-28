@@ -1,0 +1,31 @@
+# Hash algorithm type (MD5, SHA1, SHA224, SHA256, SHA384, and SHA512).
+hash_type: "MD5"
+
+# Path to monitor
+targetPath: "./sample"
+
+# Exclusions
+toIgnore:
+  - ./*.log
+  - ./ignoreTest/*
+
+# Log path
+logPath: "./log"
+
+# Integrity report format: json or txt
+reportType: "json"
+
+# Target file to store integrity records
+integrityReport: "./storage/integrity"
+
+# Notification method (POST, EMAIL)
+notificationMethod: "POST"
+
+# If POST notification method is defined, config below
+postEndPoint: ""
+
+# If EMAIL notification method is defined, config below
+smtpHost: ""
+smtpUser: ""
+smtpPass: ""
+smtpPort: ""
