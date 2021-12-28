@@ -4,10 +4,10 @@
 
 from setuptools import setup, find_packages
 
-with open('README') as readme_file:
+with open('README.md') as readme_file:
     readme = readme_file.read()
 
-with open('HISTORY') as history_file:
+with open('HISTORY.md') as history_file:
     history = history_file.read()
 
 requirements = ['Click>=7.0', ]
@@ -16,7 +16,7 @@ test_requirements = [ ]
 
 setup(
     author="Bruno Bueno",
-    author_email='bbueno_python@fastmail.com',
+    author_email='integrityguard@fastmail.com',
     python_requires='>=3.6',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
@@ -44,6 +44,6 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/bruno-canada/integrityguard',
-    version='0.1.0',
+    version='0.1.1',
     zip_safe=False,
 )
