@@ -10,4 +10,4 @@ Development Lead
 Contributors
 ------------
 
-None yet. Why not be the first?
+Looking for engaged developers to make IntegrityGuard an awesome tool.
