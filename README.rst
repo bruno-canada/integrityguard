@@ -24,6 +24,16 @@ Features highlight
 * Send email alerts
 * Supported hashing methods: "md5", "sha1", "sha224", "sha256", "sha384", "sha512"
 
+How to use it
+----------------------
+
+1. To install, run ``pip install integrityguard``
+2. Edit the configuration file that will be presented after the installation. (``integrityguard.conf``)
+3. Generate the reference hashes, run ``integrityguard --task generate_hashes``
+4. Start the monitoring, run ``integrityguard --task monitor``
+
+For more information, run ``integrityguard --help``
+
 Call for contributors
 ----------------------
 
