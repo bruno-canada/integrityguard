@@ -41,7 +41,7 @@ setup(
         ],
     },
     data_files=[
-        (os_dirs.user_config_dir, ['src/helpers/integrityguard.conf'])
+        (os_dirs.user_config_dir, ['integrityguard/helpers/integrityguard.conf'])
     ],
     install_requires=requirements,
     license="MIT license",
