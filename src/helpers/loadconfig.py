@@ -12,7 +12,7 @@ def load_config(config_path=None):
 
     # Check if the user provided a config path
     if config_path != None:
-        config_file = os.path.join(config_path)
+        config_file = os.path.abspath(config_path)
 
     # Check if the config file exist
     if os.path.exists(config_file) == False:
