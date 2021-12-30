@@ -1,16 +1,22 @@
 #!/usr/bin/env python3
 
-"""The setup script."""
-
+from appdirs import *
 from setuptools import setup, find_packages
+from colorama import init, Fore, Back, Style
+import os
 
-with open('README.md') as readme_file:
+init(autoreset=True)
+
+# Identify OS config default path
+os_dirs = AppDirs("IntegrityGuard", "IntegrityGuard")
+
+with open('README.rst') as readme_file:
     readme = readme_file.read()
 
-with open('HISTORY.md') as history_file:
+with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = ['Click>=7.0', ]
+requirements = [ 'appdirs>=1.4.4','watchdog>=1.0.2', 'colorama>=0.4.4' ]
 
 test_requirements = [ ]
 
@@ -19,7 +25,7 @@ setup(
     author_email='integrityguard@fastmail.com',
     python_requires='>=3.6',
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
@@ -34,6 +40,9 @@ setup(
             'integrityguard=integrityguard.cli:main',
         ],
     },
+    data_files=[
+        (os_dirs.user_config_dir, ['src/helpers/integrityguard.conf'])
+    ],
     install_requires=requirements,
     license="MIT license",
     long_description=readme + '\n\n' + history,
@@ -47,3 +56,8 @@ setup(
     version='0.1.1',
     zip_safe=False,
 )
+
+# Print basic instructions for the user
+print(Fore.GREEN + "Success!! See important information below:")
+print(Fore.YELLOW + "Default config file path: " + os.path.join(os_dirs.user_config_dir, "integrityguard.conf") )
+print(Fore.YELLOW + "Default hashes store path: " + os.path.join(os_dirs.user_data_dir, "hashes.json") )
