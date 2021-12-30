@@ -5,13 +5,20 @@ import time
 import logging
 from watchdog.observers import Observer
 from watchdog.events import LoggingEventHandler
+from integrityguard.helpers.loadconfig import load_config
 
-if __name__ == "__main__":
+# Load configuration
+config = load_config()
+
+# Get root path to scan
+path = config['monitor']['target_path']
+
+def monitor():
     logging.basicConfig(filename="",
                         level=logging.INFO,
                         format='[%(asctime)s] %(message)s',
                         datefmt='%Y-%m-%d %H:%M:%S')
-    path = sys.argv[1] if len(sys.argv) > 1 else '.'
+                        
     event_handler = LoggingEventHandler()
     observer = Observer()
     observer.schedule(event_handler, path, recursive=True)

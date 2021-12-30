@@ -3,8 +3,8 @@
 import os
 import json
 import pathlib
-from helpers.loadconfig import load_config
-from data.hash import hash_file
+from integrityguard.helpers.loadconfig import load_config
+from integrityguard.data.hash import hash_file
 from appdirs import *
 
 # Load configuration
@@ -16,32 +16,34 @@ path = config['monitor']['target_path']
 # Get hash type
 hash_type = config['hash']['hash_type'].lower()
 
-# Check if the directory is empty
-if len( os.listdir(path) ) == 0:
-    raise ValueError("The directory is empty.")
+def hash_report():
 
-# Identify OS config default path
-os_dirs = AppDirs("IntegrityGuard", "IntegrityGuard")
+    # Check if the directory is empty
+    if len( os.listdir(path) ) == 0:
+        raise ValueError("The directory is empty.")
 
-# Initiate hashes variable
-hashes = []
+    # Identify OS config default path
+    os_dirs = AppDirs("IntegrityGuard", "IntegrityGuard")
 
-# Scan path directory recursively
-for subdir, dirs, files in os.walk(path):
-    for file in files:
+    # Initiate hashes variable
+    hashes = []
 
-        file_fullpath = os.path.join(subdir, file)
-        try:
-            getHash = hash_file(file_fullpath, hash_type)
-            hashes.append({ "path": os.path.abspath(file_fullpath), "hash": getHash })
-            print(file_fullpath + " > " + getHash)
-        except ValueError as e:
-            print("Something went wrong hashing the files. " + e)
+    # Scan path directory recursively
+    for subdir, dirs, files in os.walk(path):
+        for file in files:
 
-# Store hashes
-hash_file_path = os.path.join(os_dirs.user_data_dir, "hashes.json")
-f = open(hash_file_path, "w")
-f.write(json.dumps(hashes))
-f.close()
+            file_fullpath = os.path.join(subdir, file)
+            try:
+                getHash = hash_file(file_fullpath, hash_type)
+                hashes.append({ "path": os.path.abspath(file_fullpath), "hash": getHash })
+                print(file_fullpath + " > " + getHash)
+            except ValueError as e:
+                print("Something went wrong hashing the files. " + e)
 
-print("Hashes stored at " + hash_file_path)
+    # Store hashes
+    hash_file_path = os.path.join(os_dirs.user_data_dir, "hashes.json")
+    f = open(hash_file_path, "w")
+    f.write(json.dumps(hashes))
+    f.close()
+
+    print("Hashes stored at " + hash_file_path)

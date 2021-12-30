@@ -9,7 +9,7 @@ def load_config(config_path=None):
 
     # Define default config file path
     config_file = os.path.join(dirs.user_config_dir, "integrityguard.conf")
-
+    
     # Check if the user provided a config path
     if config_path != None:
         config_file = os.path.abspath(config_path)
