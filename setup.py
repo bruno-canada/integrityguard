@@ -3,6 +3,7 @@
 from appdirs import *
 from setuptools import setup, find_packages
 from colorama import init, Fore, Back, Style
+from integrityguard.helpers.copyconfig import copy_config
 import os
 
 init(autoreset=True)
@@ -40,9 +41,6 @@ setup(
             'integrityguard=integrityguard.cli:main',
         ],
     },
-    data_files=[
-        (os_dirs.user_config_dir, ['integrityguard/helpers/integrityguard.conf'])
-    ],
     install_requires=requirements,
     license="MIT license",
     long_description=readme + '\n\n' + history,
@@ -57,7 +55,5 @@ setup(
     zip_safe=False,
 )
 
-# Print basic instructions for the user
-print(Fore.GREEN + "Success!! See important information below:")
-print(Fore.YELLOW + "Default config file path: " + os.path.join(os_dirs.user_config_dir, "integrityguard.conf") )
-print(Fore.YELLOW + "Default hashes store path: " + os.path.join(os_dirs.user_data_dir, "hashes.json") )
+# Copy config file
+copy_config()
