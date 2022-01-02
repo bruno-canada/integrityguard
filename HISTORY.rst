@@ -2,6 +2,11 @@
 History
 =======
 
+0.3.2 (2022-01-01)
+------------------
+
+* Fixed issue of hash report not being created #12
+
 0.3.1 (2022-01-01)
 ------------------
 
