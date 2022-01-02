@@ -40,9 +40,12 @@ def hash_report():
             except ValueError as e:
                 print("Something went wrong hashing the files. " + e)
 
+    # Make sure the data dir exist
+    os.makedirs(os_dirs.user_data_dir, exist_ok=True)
+
     # Store hashes
     hash_file_path = os.path.join(os_dirs.user_data_dir, "hashes.json")
-    f = open(hash_file_path, "w")
+    f = open(hash_file_path, "w+")
     f.write(json.dumps(hashes))
     f.close()
 
