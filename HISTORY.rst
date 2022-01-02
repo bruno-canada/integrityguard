@@ -2,11 +2,16 @@
 History
 =======
 
+0.3.1 (2022-01-01)
+------------------
+
+* Fixed copy config to user issue #11
+
 0.3.0 (2022-01-01)
 ------------------
 
-* Replaced setuptools data_files feature with copy_config() method #7 
-* Added new feature to CLI to show paths for the system #8 
+* Replaced setuptools data_files feature with copy_config() method #7
+* Added new feature to CLI to show paths for the system #8
 * Adjusted versioning to 0.3.0 #10
 
 0.2.1 (2021-12-29)
