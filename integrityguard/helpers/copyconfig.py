@@ -19,8 +19,8 @@ def copy_config(config_path=None):
         config_file = os.path.abspath(config_path)
 
     # Check if the config file exist
-    if os.path.isfile(config_file) == False:
-        raise ValueError("The configuration file *" + config_file + "* doesn't exist.")
+    if os.path.isfile(config_file) == True:
+        print("The configuration file *" + config_file + "* already exist. Skipped.")
     else:
         source_config_path = os.path.dirname(os.path.abspath(__file__))
         source_config_path = os.path.join( source_config_path , "../integrityguard.conf")
