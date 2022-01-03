@@ -18,7 +18,7 @@ The main motivation for this project is to offer all the minimum features requir
 Features highlight
 --------------------
 
-* Simple and centralized configuration YAML file (``config.yml``)
+* Simple and centralized configuration YAML file (``integrityguard.conf``)
 * Generate logs of any changes in real-time for future auditing
 * Push notifications to an API endpoint
 * Send email alerts
@@ -28,9 +28,17 @@ How to use it
 ----------------------
 
 1. To install, run ``pip install integrityguard``
-2. Edit the configuration file that will be presented after the installation. (``integrityguard.conf``)
-3. Generate the reference hashes, run ``integrityguard --task generate_hashes``
-4. Start the monitoring, run ``integrityguard --task monitor``
+2. Edit/provide the configuration file (``integrityguard.conf``)
+   a. To copy the original .conf file, run ``integrityguard --task copy_config --destination <full_path>``
+   b. To provide the new .conf file path use ``--config <full_path>``
+
+4. Generate the reference hashes, run ``integrityguard --task generate_hashes``
+   a. To provide the target path via command, run ``integrityguard --task generate_hashes --target <full_path>``
+
+5. Start the monitoring, run ``integrityguard --task monitor``
+   a. To provide the target path via command, run ``integrityguard --task monitor --target <full_path>``
+
+**IMPORTANT**: By providing configurations via command line anything defined via .conf file will be overwritten.
 
 For more information, run ``integrityguard --help``
 
