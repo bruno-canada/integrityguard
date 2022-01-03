@@ -3,7 +3,7 @@ from appdirs import *
 import os
 from integrityguard.helpers.copyconfig import copy_config
 
-def load_config(config_path=None):
+def load_config(config_path=None,copy=False):
 
     # Identify OS config default path
     dirs = AppDirs("IntegrityGuard", "IntegrityGuard")
@@ -17,7 +17,9 @@ def load_config(config_path=None):
 
     # Check if the config file exist
     if os.path.exists(config_file) == False:
-        copy_config()
+        print("File *"+ config_file + "* not found.")
+        if copy:
+            copy_config(config_file)
 
     config = configparser.ConfigParser()
     config.read(config_file)

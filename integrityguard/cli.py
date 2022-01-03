@@ -31,10 +31,10 @@ def main(task,target,config,hash,destination):
     """Console script for IntegrityGuard."""
 
     if task == "generate_hashes":
-        hash_report(config)
+        hash_report(config,target)
 
     elif task == "monitor":
-        monitor(config)
+        monitor(config,target)
 
     elif task == "copy_config":
         # Handle possible errors

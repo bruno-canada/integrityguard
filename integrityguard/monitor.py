@@ -7,18 +7,21 @@ from watchdog.observers import Observer
 from watchdog.events import LoggingEventHandler
 from integrityguard.helpers.loadconfig import load_config
 
-# Load configuration
-config = load_config()
+def monitor(config=None,target=None):
 
-# Get root path to scan
-path = config['monitor']['target_path']
+    # Load configuration
+    config = load_config(config)
 
-def monitor():
+    # Get root path to scan
+    path = target
+    if path == None:
+        path = config['monitor']['target_path']
+
     logging.basicConfig(filename="",
                         level=logging.INFO,
                         format='[%(asctime)s] %(message)s',
                         datefmt='%Y-%m-%d %H:%M:%S')
-                        
+
     event_handler = LoggingEventHandler()
     observer = Observer()
     observer.schedule(event_handler, path, recursive=True)
