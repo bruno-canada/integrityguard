@@ -24,14 +24,19 @@ hash_type = config['hash']['hash_type'].lower()
 @click.option('--target', default=path, help='Target path to monitor')
 @click.option('--config', help='Full path to .conf file')
 @click.option('--hash', help='Hash algorithm type (MD5, SHA1, SHA224, SHA256, SHA384, and SHA512).')
+
+# Options to use with copy_config
 @click.option('--destination', help='Used for copy_config task. Full destination path of the .conf file.')
 
-def main(task,target,config,hash,destination):
+# Options to use with generate_hashes
+@click.option('--save-to', help='Destination folder of the hashes.json report.')
+
+def main(task,target,config,hash,destination,save_to):
 
     """Console script for IntegrityGuard."""
 
     if task == "generate_hashes":
-        hash_report(config,target)
+        hash_report(config,target,save_to)
 
     elif task == "monitor":
         monitor(config,target)
