@@ -7,16 +7,16 @@ from integrityguard.helpers.loadconfig import load_config
 from integrityguard.data.hash import hash_file
 from appdirs import *
 
-# Load configuration
-config = load_config()
+def hash_report(config=None,target=None):
 
-# Get root path to scan
-path = config['monitor']['target_path']
+    # Load configuration
+    config = load_config(config)
 
-# Get hash type
-hash_type = config['hash']['hash_type'].lower()
+    # Get root path to scan
+    path = config['monitor']['target_path']
 
-def hash_report():
+    # Get hash type
+    hash_type = config['hash']['hash_type'].lower()
 
     # Check if the directory is empty
     if len( os.listdir(path) ) == 0:
