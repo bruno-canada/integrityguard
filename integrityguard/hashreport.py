@@ -7,13 +7,15 @@ from integrityguard.helpers.loadconfig import load_config
 from integrityguard.data.hash import hash_file
 from appdirs import *
 
-def hash_report(config=None,target=None):
+def hash_report(config=None,target=None,save_to=None):
 
     # Load configuration
     config = load_config(config)
 
     # Get root path to scan
-    path = config['monitor']['target_path']
+    path = target
+    if path == None:
+        path = config['monitor']['target_path']
 
     # Get hash type
     hash_type = config['hash']['hash_type'].lower()
@@ -40,13 +42,15 @@ def hash_report(config=None,target=None):
             except ValueError as e:
                 print("Something went wrong hashing the files. " + e)
 
-    # Make sure the data dir exist
-    os.makedirs(os_dirs.user_data_dir, exist_ok=True)
+    # Define hashes report destination
+    hash_destination = save_to
+    if hash_destination == None:
+        hash_destination = os.path.join(os_dirs.user_data_dir, "hashes.json")
+        os.makedirs(os_dirs.user_data_dir, exist_ok=True)
 
     # Store hashes
-    hash_file_path = os.path.join(os_dirs.user_data_dir, "hashes.json")
-    f = open(hash_file_path, "w+")
+    f = open(hash_destination, "w+")
     f.write(json.dumps(hashes,skipkeys=True,indent=2))
     f.close()
 
-    print("Hashes stored at " + hash_file_path)
+    print("Hashes stored at " + hash_destination)
