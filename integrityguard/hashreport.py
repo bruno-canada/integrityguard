@@ -46,7 +46,7 @@ def hash_report():
     # Store hashes
     hash_file_path = os.path.join(os_dirs.user_data_dir, "hashes.json")
     f = open(hash_file_path, "w+")
-    f.write(json.dumps(hashes))
+    f.write(json.dumps(hashes,skipkeys=True,indent=2))
     f.close()
 
     print("Hashes stored at " + hash_file_path)
