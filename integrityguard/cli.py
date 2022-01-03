@@ -16,11 +16,15 @@ path = config['monitor']['target_path']
 hash_type = config['hash']['hash_type'].lower()
 
 @click.command()
+
+# Required options
 @click.option('--task', default="monitor", help='Tasks available: monitor, generate_hashes')
+
+# Optional or conditional options
 @click.option('--target', default=path, help='Target path to monitor')
-@click.option('--config', default="", help='Full path to .conf file')
-@click.option('--hash', default="", help='Hash algorithm type (MD5, SHA1, SHA224, SHA256, SHA384, and SHA512).')
-@click.option('--destination', default="", help='Used for copy_config task. Full destination path of the .conf file.')
+@click.option('--config', help='Full path to .conf file')
+@click.option('--hash', help='Hash algorithm type (MD5, SHA1, SHA224, SHA256, SHA384, and SHA512).')
+@click.option('--destination', help='Used for copy_config task. Full destination path of the .conf file.')
 
 def main(task,target,config,hash,destination):
 
