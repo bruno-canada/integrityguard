@@ -29,13 +29,16 @@ How to use it
 
 1. To install, run ``pip install integrityguard``
 2. Edit/provide the configuration file (``integrityguard.conf``)
+
    - To copy the original .conf file, run ``integrityguard --task copy_config --destination <full_path>``
    - To provide the new .conf file path use ``--config <full_path>``
 
-4. Generate the reference hashes, run ``integrityguard --task generate_hashes``
+3. Generate the reference hashes, run ``integrityguard --task generate_hashes``
+
    - To provide the target path via command, run ``integrityguard --task generate_hashes --target <full_path>``
 
-5. Start the monitoring, run ``integrityguard --task monitor``
+4. Start the monitoring, run ``integrityguard --task monitor``
+
    - To provide the target path via command, run ``integrityguard --task monitor --target <full_path>``
 
 **IMPORTANT**: By providing configurations via command line anything defined via .conf file will be overwritten.
