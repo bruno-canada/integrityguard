@@ -2,6 +2,15 @@
 History
 =======
 
+0.4.0 (2022-01-02)
+------------------
+
+* Added copy config option to CLI #13
+* Adjusted hash report JSON indentation #14
+* Added CLI feature to define the conf file path #15
+* Added --save-to CLI option #16
+* Updated README and HISTORY files #17 
+
 0.3.2 (2022-01-01)
 ------------------
 
