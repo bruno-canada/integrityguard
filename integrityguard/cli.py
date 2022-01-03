@@ -36,6 +36,11 @@ def main(task,target,config,hash,destination,save_to):
     """Console script for IntegrityGuard."""
 
     if task == "generate_hashes":
+        
+        if save_to != None and save_to.endswith('.json') == False:
+            print("Error: --save-to must be a full path including the file name. (e.g. hashes.json)")
+            exit()
+
         hash_report(config,target,save_to)
 
     elif task == "monitor":
