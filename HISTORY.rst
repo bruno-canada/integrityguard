@@ -2,6 +2,11 @@
 History
 =======
 
+0.4.3 (2022-01-05)
+------------------
+
+* Adjusted README file with proper conf and badges #22 
+
 0.4.2 (2022-01-05)
 ------------------
 
