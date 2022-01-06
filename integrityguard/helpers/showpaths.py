@@ -12,7 +12,7 @@ def show_paths(config_path=None):
     config_file = os.path.join(os_dirs.user_config_dir, "integrityguard.conf")
 
     # Check if the user provided a config path
-    if config_path != None:
+    if config_path:
         config_file = os.path.abspath(config_path)
 
     # Print basic instructions for the user

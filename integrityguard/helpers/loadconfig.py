@@ -12,7 +12,7 @@ def load_config(config_path=None,copy=False):
     config_file = os.path.join(dirs.user_config_dir, "integrityguard.conf")
 
     # Check if the user provided a config path
-    if config_path != None:
+    if config_path:
         config_file = os.path.abspath(config_path)
 
     # Check if the config file exist

@@ -12,7 +12,7 @@ def copy_config(target_path=None):
         os.makedirs(dirs.user_config_dir, exist_ok=True)
 
     # Define default config file path
-    if target_path == None:
+    if not target_path:
         target_path = os.path.join(dirs.user_config_dir, "integrityguard.conf")
 
     # Check if the config file exist
