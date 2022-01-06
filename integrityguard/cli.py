@@ -6,15 +6,6 @@ from integrityguard.helpers.copyconfig import copy_config
 from integrityguard.hashreport import hash_report
 from integrityguard.monitor import monitor
 
-# Load configuration
-config = load_config()
-
-# Get root path to scan
-path = config['monitor']['target_path']
-
-# Get hash type
-hash_type = config['hash']['hash_type'].lower()
-
 @click.command()
 
 # Required options
@@ -36,7 +27,7 @@ def main(task,target,config,hash,destination,save_to):
     """Console script for IntegrityGuard."""
 
     if task == "generate_hashes":
-        
+
         if save_to != None and save_to.endswith('.json') == False:
             print("Error: --save-to must be a full path including the file name. (e.g. hashes.json)")
             exit()
