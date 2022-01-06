@@ -2,10 +2,15 @@
 History
 =======
 
+0.4.2 (2022-01-05)
+------------------
+
+* Cleaned up variable checks #21
+
 0.4.1 (2022-01-05)
 ------------------
 
-* Fixed CLI issues with Click requirement and preload of config #20 
+* Fixed CLI issues with Click requirement and preload of config #20
 
 0.4.0 (2022-01-02)
 ------------------
