@@ -3,11 +3,20 @@ IntegrityGuard
 ==============
 
 .. image:: https://img.shields.io/pypi/v/integrityguard.svg
-        :target: https://pypi.python.org/pypi/integrityguard
+     :target: https://pypi.python.org/pypi/integrityguard
+     :alt: PyPI
+
+.. image:: https://img.shields.io/pypi/dm/integrityguard
+     :target: https://pypi.python.org/pypi/integrityguard
+     :alt: PyPI downloads
+
+.. image:: https://img.shields.io/pypi/pyversions/integrityguard
+     :target: https://pypi.python.org/pypi/integrityguard
+     :alt: Python versions
 
 .. image:: https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg
      :target: code_of_conduct.md
-     :alt: Contributor Covenant
+     :alt: Contributor covenant
 
 Multiplatform agent for file integrity monitoring (FIM).
 
@@ -18,7 +27,7 @@ The main motivation for this project is to offer all the minimum features requir
 Features highlight
 --------------------
 
-* Simple and centralized configuration YAML file (``config.yml``)
+* Simple and centralized configuration file (``integrityguard.conf``)
 * Generate logs of any changes in real-time for future auditing
 * Push notifications to an API endpoint
 * Send email alerts
