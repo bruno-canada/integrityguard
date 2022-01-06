@@ -2,17 +2,17 @@
 IntegrityGuard
 ==============
 
-.. image:: https://img.shields.io/pypi/v/integrityguard.svg
+.. image:: https://img.shields.io/pypi/v/integrityguard?label=PyPI
      :target: https://pypi.python.org/pypi/integrityguard
-     :alt: PyPI
+     :alt: PyPI current version
 
-.. image:: https://img.shields.io/pypi/dm/integrityguard
+.. image:: https://img.shields.io/pypi/dm/integrityguard?label=Downloads
      :target: https://pypi.python.org/pypi/integrityguard
      :alt: PyPI downloads
 
-.. image:: https://img.shields.io/pypi/pyversions/integrityguard
+.. image:: https://img.shields.io/pypi/pyversions/integrityguard?label=Python
      :target: https://pypi.python.org/pypi/integrityguard
-     :alt: Python versions
+     :alt: Python
 
 .. image:: https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg
      :target: code_of_conduct.md
