@@ -17,7 +17,7 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = [ 'appdirs>=1.4.4','watchdog>=1.0.2', 'colorama>=0.4.4' ]
+requirements = [ 'appdirs>=1.4.4','watchdog>=1.0.2', 'colorama>=0.4.4', 'click==8.0.3' ]
 
 test_requirements = [ ]
 
