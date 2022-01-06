@@ -12,7 +12,7 @@ from integrityguard.monitor import monitor
 @click.option('--task', default="monitor", help='Tasks available: monitor, generate_hashes')
 
 # Optional or conditional options
-@click.option('--target', default=path, help='Target path to monitor')
+@click.option('--target', help='Target path to monitor')
 @click.option('--config', help='Full path to .conf file')
 @click.option('--hash', help='Hash algorithm type (MD5, SHA1, SHA224, SHA256, SHA384, and SHA512).')
 
@@ -28,7 +28,7 @@ def main(task,target,config,hash,destination,save_to):
 
     if task == "generate_hashes":
 
-        if save_to != None and save_to.endswith('.json') == False:
+        if save_to and save_to.endswith('.json') == False:
             print("Error: --save-to must be a full path including the file name. (e.g. hashes.json)")
             exit()
 
@@ -39,11 +39,11 @@ def main(task,target,config,hash,destination,save_to):
 
     elif task == "copy_config":
         # Handle possible errors
-        if destination == "":
+        if not destination:
             print("Error: --destination is required when using copy_config task.")
             exit()
 
-        if destination.endswith('.conf') == False:
+        if destination and destination.endswith('.conf') == False:
             print("Error: --destination must be a full path including the file name. (e.g. <any-name>.conf)")
             exit()
 
